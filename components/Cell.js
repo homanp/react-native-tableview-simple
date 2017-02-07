@@ -273,7 +273,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   cell_title: {
-    fontSize: 16,
+    fontSize: 18,
     flex: 1,
   },
   cell_leftDetailTitle: {
