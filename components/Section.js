@@ -34,6 +34,7 @@ class Section extends Component {
       separatorInsetLeft,
       separatorInsetRight,
       separatorTintColor,
+      sectionSeparatorTintColor,
     } = this.props;
 
     const header = this.props.header ? this.props.header : false;
@@ -68,6 +69,13 @@ class Section extends Component {
           marginRight: separatorInsetRight,
         },
       ],
+      section_inner: [
+        ...{},
+        styles.section_inner,
+        {
+          borderColor: sectionSeparatorTintColor,
+        }
+      ]
     };
 
     /**
@@ -165,7 +173,7 @@ class Section extends Component {
     return (
       <View style={_styles.section}>
         {headerComponent || renderHeader()}
-        <View style={styles.section_inner}>
+        <View style={_styles.section_inner}>
           {React.Children.map(children, renderChild)}
         </View>
         {footerComponent || renderFooter()}
@@ -219,6 +227,7 @@ Section.propTypes = {
   headerTextColor: PropTypes.string,
   hideSeparator: PropTypes.bool,
   sectionTintColor: PropTypes.string,
+  sectionSeparatorTintColor: PropTypes.string,
   separatorInsetLeft: PropTypes.number,
   separatorInsetRight: PropTypes.number,
   separatorTintColor: PropTypes.string,
@@ -234,6 +243,7 @@ Section.defaultProps = {
   headerTextColor: '#6d6d72',
   hideSeparator: false,
   sectionTintColor: '#EFEFF4',
+  sectionSeparatorTintColor: '#EFEFF4',
   footerTextColor: '#6d6d72',
   separatorInsetLeft: 15,
   separatorInsetRight: 0,
